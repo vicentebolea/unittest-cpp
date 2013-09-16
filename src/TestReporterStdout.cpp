@@ -8,9 +8,9 @@ namespace UnitTest {
 void TestReporterStdout::ReportFailure(TestDetails const& details, char const* failure)
 {
 #if defined(__APPLE__) || defined(__GNUG__)
-    char const* const errorFormat = "%s:%d: error: Failure in %s: %s\n";
+    char const* const errorFormat = "\e[31m%s:%d: error\e[0m: Failure in %s: %s\n";
 #else
-    char const* const errorFormat = "%s(%d): error: Failure in %s: %s\n";
+    char const* const errorFormat = "\e[31m%s(%d): error\e[0m: Failure in %s: %s\n";
 #endif
 
 	using namespace std;
@@ -31,11 +31,11 @@ void TestReporterStdout::ReportSummary(int const totalTestCount, int const faile
 	using namespace std;
 
     if (failureCount > 0)
-        printf("FAILURE: %d out of %d tests failed (%d failures).\n", failedTestCount, totalTestCount, failureCount);
+        printf("[\e[31mFAILURE\e[0m] %d out of %d tests failed (%d failures).\n", failedTestCount, totalTestCount, failureCount);
     else
-        printf("Success: %d tests passed.\n", totalTestCount);
+        printf("[\e[32mSUCCESS\e[0m] (\e[34m%d\e[0m) tests \e[4m\e[34mPASSED\e[0m.\n", totalTestCount);
 
-    printf("Test time: %.2f seconds.\n", secondsElapsed);
+    printf("\e[34m[Test time] >>> %.2f seconds.\e[0m\n", secondsElapsed);
 }
 
 }
