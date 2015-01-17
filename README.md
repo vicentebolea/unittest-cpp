@@ -12,6 +12,6 @@ to unittest++.
 Roadmap of new features (TENTATIVE)
 -----------------------------------
  
- [x] Better test report form, using differents colors and clear explanations of the results.
- [ ] Possible to run specifics tests instead of running all the test at the same time.
- [ ] Mocking function support (UNIX-like OS).
+ - [x] Better test report form, using differents colors and clear explanations of the results.
+ - [ ] Possible to run specifics tests instead of running all the test at the same time.
+ - [ ] Mocking function support (UNIX-like OS).
