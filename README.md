@@ -1,4 +1,4 @@
-UnitTest++
+UnitTest++ [![Build Status](https://travis-ci.org/vicentebolea/unittest-cpp.svg?branch=master)](https://travis-ci.org/vicentebolea/unittest-cpp)
 ==========
 
 Why extending unittest++?
